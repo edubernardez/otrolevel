@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Otro Level | Importaciones Tech</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="smoke-overlay"></div>
+    <div class="neon-glow"></div>
+
+    <header>
+        <img src="assets/logo.png" alt="Otro Level" class="logo">
+        <div class="cart-trigger" onclick="toggleCart()">
+            🛒 <span id="cart-count">0</span>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1 class="neon-title">OTRO LEVEL</h1>
+        <p class="location-tag">📍 Caseros, Buenos Aires | Importación Directa</p>
+    </section>
+
+    <section class="brand-info">
+        <div class="info-box">
+            <h3>¿Quiénes somos?</h3>
+            <p>Somos un equipo de **Caseros** dedicado a elevar tu tecnología. Traemos lo último en audio, smartwatches y gadgets premium con garantía real.</p>
+        </div>
+        <div class="info-box highlight">
+            <h3>Logística Argentina 🇦🇷</h3>
+            <ul>
+                <li>🚀 **Moto Express**: GBA y CABA en el día.</li>
+                <li>📦 **Correo Argentino / Andreani**: Todo el país.</li>
+                <li>💳 **Pagos**: Alias/CBU, Mercado Pago o Efectivo.</li>
+            </ul>
+        </div>
+    </section>
+
+    <main id="productos-grid" class="product-grid">
+        </main>
+
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="toggleCart()">&times;</span>
+            <h2 class="neon-purple">Tu Pedido Tech</h2>
+            <div id="cart-list"></div>
+            
+            <div class="payment-selection">
+                <p>Seleccioná tu medio de pago:</p>
+                <div class="pay-methods">
+                    <label><input type="radio" name="pay" value="Transferencia/Alias" checked> <span>Transferencia / Alias</span></label>
+                    <label><input type="radio" name="pay" value="Mercado Pago"> <span>Mercado Pago</span></label>
+                    <label><input type="radio" name="pay" value="Efectivo (Retiro)"> <span>Efectivo (Retiro en Caseros)</span></label>
+                </div>
+            </div>
+
+            <div class="cart-total-box">
+                <h3>Total: $<span id="total-amount">0</span></h3>
+                <button class="btn-checkout" onclick="finalizeOrder()">FINALIZAR POR WHATSAPP 🚀</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

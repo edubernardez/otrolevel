@@ -1,0 +1,93 @@
+:root {
+    --cyan: #00f3ff;
+    --purple: #bc00ff;
+    --dark: #050505;
+    --glass: rgba(255, 255, 255, 0.05);
+}
+
+* { box-sizing: border-box; }
+body {
+    background: var(--dark);
+    color: white;
+    font-family: 'Rajdhani', sans-serif;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+/* Fondo Humo y Neón */
+.smoke-overlay {
+    position: fixed; top: 0; width: 100%; height: 100%;
+    background: radial-gradient(circle at 50% 50%, #111, #000);
+    z-index: -2; opacity: 0.8;
+}
+
+.neon-glow {
+    position: fixed; top: -100px; right: -50px; width: 300px; height: 300px;
+    background: var(--cyan); filter: blur(120px); opacity: 0.2; z-index: -1;
+}
+
+header {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 15px 20px; position: sticky; top: 0;
+    background: rgba(0,0,0,0.8); backdrop-filter: blur(10px); z-index: 100;
+}
+
+.logo { height: 45px; filter: drop-shadow(0 0 5px var(--cyan)); }
+
+/* Grid Móvil: 2 Columnas */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* FORZAR 2 COLUMNAS EN MÓVIL */
+    gap: 12px;
+    padding: 12px;
+}
+
+@media (min-width: 768px) {
+    .product-grid { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; padding: 40px; }
+}
+
+.product-card {
+    background: var(--glass);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 15px;
+    padding: 10px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.img-wrapper {
+    width: 100%;
+    aspect-ratio: 1 / 1; /* Mantiene proporción cuadrada */
+    overflow: hidden;
+    border-radius: 10px;
+    background: #111;
+}
+
+.img-wrapper img { width: 100%; height: 100%; object-fit: cover; }
+
+.product-card h3 { font-size: 0.9rem; margin: 10px 0 5px; color: #ddd; }
+
+.price { color: var(--cyan); font-size: 1.2rem; font-weight: bold; margin-bottom: 10px; }
+
+.btn-add {
+    width: 100%; background: linear-gradient(45deg, var(--purple), var(--cyan));
+    border: none; color: white; padding: 10px; border-radius: 8px;
+    font-weight: bold; font-size: 0.8rem; cursor: pointer;
+}
+
+/* Brand Info */
+.brand-info { padding: 20px; display: flex; flex-direction: column; gap: 15px; }
+.info-box { background: rgba(255,255,255,0.03); padding: 20px; border-radius: 15px; border-left: 4px solid var(--cyan); }
+.highlight { border-left: 4px solid var(--purple); }
+
+/* Modal Checkout */
+.modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); }
+.modal-content { 
+    background: #111; margin: 5% auto; padding: 25px; width: 92%; max-width: 500px;
+    border-radius: 20px; border: 1px solid var(--cyan);
+}
+
+.btn-checkout {
+    width: 100%; background: #25D366; color: white; border: none; padding: 18px;
+    border-radius: 12px; font-weight: bold; font-size: 1.1rem; cursor: pointer; margin-top: 15px;
+}
